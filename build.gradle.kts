@@ -18,13 +18,16 @@ buildscript {
     }
 }
 
+plugins {
+// see files coverage.gradle.kts and CoveragePluginDSL.kts in buildSrc folder
+// article : https://medium.com/@gmazzo65/generating-android-jvm-aggregated-coverage-reports-53e912b2e63c
+//  source : https://github.com/gmazzo/android-jacoco-aggregated-demo
+  coverage
+}
+
 allprojects {
     repositories {
         google()
         mavenCentral()
     }
-}
-
-tasks.register("clean", Delete::class){
-    delete(rootProject.buildDir)
 }
